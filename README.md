@@ -86,22 +86,5 @@ In advanced stages, the focus shifts to improving query performance. Some optimi
 1. Find the top 3 most-viewed tracks for each artist using window functions.
 2. Write a query to find tracks where the liveness score is above the average.
 3. **Use a `WITH` clause to calculate the difference between the highest and lowest energy values for tracks in each album.**
-```sql
-WITH cte
-AS
-(SELECT 
-	album,
-	MAX(energy) as highest_energy,
-	MIN(energy) as lowest_energery
-FROM spotify
-GROUP BY 1
-)
-SELECT 
-	album,
-	highest_energy - lowest_energery as energy_diff
-FROM cte
-ORDER BY 2 DESC
-```
-   
-5. Find tracks where the energy-to-liveness ratio is greater than 1.2.
-6. Calculate the cumulative sum of likes for tracks ordered by the number of views, using window functions.
+4. Find tracks where the energy-to-liveness ratio is greater than 1.2.
+5. Calculate the cumulative sum of likes for tracks ordered by the number of views, using window functions.
